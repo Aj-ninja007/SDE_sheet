@@ -15,4 +15,20 @@
         e2=e2//e1
         ans=[int((e1+e2)//2),int((e2-e1)//2)]
         return ans
-        
+
+# ......................................
+class Solution:
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        arr=[]
+        for i in grid:
+            arr+=i
+        print(arr)
+        l=[]
+        d=Counter(arr)
+        for i in d:
+            if d[i]>1:
+                l.append(i)
+        for i in range(1,len(arr)+1):
+            if i not in arr:
+                l.append(i)
+        return l
